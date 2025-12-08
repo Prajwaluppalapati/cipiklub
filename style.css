@@ -1,0 +1,914 @@
+/* ---------------------------
+   ORIGINAL LIGHT THEME CSS
+   (UNCHANGED — copied exactly from your message)
+   --------------------------- */
+
+.index_body{
+    margin: 0;
+    padding: 0;
+    font-family: "Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#about {
+  scroll-margin-top: 50px; /* scroll 50px above the section */
+}
+
+.index_navbar_home{
+    position: absolute;
+    left: 1%;
+    margin-top: -3.5%;
+    padding: 0;
+}
+
+.index_navbar_home:hover{
+    display: inline-block;
+    transform-origin: top left;
+    animation: waveHome 3s cubic-bezier(0.375, 0, 0.675, 1) infinite;
+}
+
+@keyframes waveHome {
+    0%   { transform: rotate(-2deg); }
+    25%  { transform: rotate(5deg); }
+    50%  { transform: rotate(-2deg); }
+    75%  { transform: rotate(5deg); }
+    100% { transform: rotate(-2deg); }
+}
+
+
+.index_navbar_home_img{
+    height: 120px;
+    width: 120px;
+    margin-top: 0;
+    position: absolute;
+}
+
+.index_navbar {
+    display: flex;
+    gap: 24px;
+    padding: 16px 28px;
+    justify-content: center;
+
+    background: #ffffff; /* theme.background */
+    border-bottom: 1px solid #e0e6ed; /* theme.border */
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.index_navbar_link {
+    font-family: "Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1f2d3d; 
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    transition: 0.25s ease;
+}
+
+.index_navbar_link:hover {
+    color: #ec3750; /* Hack Club red */
+    background: rgba(236, 55, 80, 0.08);
+    transform: translateY(-2px);
+}
+
+.index_navbar_link:active {
+    transform: scale(0.97);
+}
+
+.index_navbar_home_img2{
+    height: 55px;
+    width: 55px;
+    margin-top: -10px;
+    position: absolute;
+    margin-left: 93%;
+}
+
+.index_heading_cnt{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(135deg, #ffe2f6, #d2e0ff, #d3fcec, #faf4ce);
+    height: 500px;
+    border-bottom: 2px solid #8e8aff4f; 
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10);
+}
+
+.index_heading{
+    font-family: "Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700; 
+    line-height: 1.125;
+    font-size: 70px;
+   box-sizing: border-box;
+    min-width: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var(--theme-ui-colors-white);
+    -webkit-text-fill-color: transparent;
+    margin: 0px;
+    border-radius: 8px;
+    white-space: normal;
+    background: radial-gradient(at left top, rgb(236, 55, 80), rgb(255, 140, 55)) text;
+    text-align: center;
+}
+
+.index_heading_extention{
+    font-family: "Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700; 
+    line-height: 1.125;
+    font-size: 40px;
+    box-sizing: border-box;
+    min-width: 0px;
+    height: 65px;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var(--theme-ui-colors-white);
+    -webkit-text-fill-color: transparent;
+    margin: 0px;
+    border-radius: 8px;
+    white-space: normal;
+    background: black text;
+    text-align: center;
+}
+
+/* Side nav styles (mobile) */
+.side_nav {
+    position: fixed;
+    top: 0;
+    left: -280px; /* hidden by default */
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.12);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    transition: left 0.28s cubic-bezier(.2,.9,.3,1);
+    -webkit-overflow-scrolling: touch;
+    padding: 18px 12px;
+}
+
+/* When open, slide into view */
+.side_nav.open {
+    left: 0;
+}
+
+/* Overlay that darkens the rest of the page when side nav is open */
+.side_nav_overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1500;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.side_nav_overlay.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Side nav header */
+.side_nav_header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+/* Close button */
+.side_nav_close {
+    font-size: 32px;
+    line-height: 1;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* Links inside side nav */
+.side_nav_links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 6px;
+}
+.side_nav_link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1f2d3d;
+    padding: 10px 8px;
+    border-radius: 8px;
+}
+.side_nav_link:focus,
+.side_nav_link:hover {
+    color: #ec3750;
+    background: rgba(236,55,80,0.06);
+}
+
+/* Mobile hamburger button (hidden on desktop) */
+.mobile_nav_toggle {
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 18px;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    z-index: 1100;
+    cursor: pointer;
+}
+
+/* hamburger lines */
+.hamburger {
+    display: inline-block;
+    width: 26px;
+    height: 18px;
+    position: relative;
+}
+.hamburger span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #1f2d3d;
+    display: block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { bottom: 0; }
+
+/* =========================================
+   MEDIA QUERIES (Tablet & Mobile Support)
+   Add this to the bottom of style.css
+   ========================================= */
+
+/* --- Tablet Devices (Screens smaller than 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .index_heading {
+        font-size: 85px; /* Slightly smaller main text */
+        margin-top: 0;
+    }
+
+    .index_heading_extention {
+        font-size: 45px;
+    }
+    
+    /* Fix the right-side logo positioning */
+    .index_navbar_home_img2 {
+        margin-left: 0;
+        right: 20px; /* Pin to right edge instead of using margin % */
+        left: auto;
+    }
+    
+    .index_navbar_home{
+        margin-top: -6%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    
+    .index_navbar_home{
+        margin-top: -4.5%;
+    }
+}
+
+/* --- Mobile Devices (Screens smaller than 767.98px) --- */
+@media screen and (max-width: 767px) {
+    /* Navbar Adjustment */
+    .index_navbar {
+        flex-wrap: nowrap; /* prevent wrap so we can place hamburger */
+        gap: 8px;
+        padding: 12px 10px;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    /* Resize and reposition the hanging flag (Orpheus) */
+    .index_navbar_home_img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .index_navbar_home {
+        margin-top: -10px; 
+        z-index: 1001;
+    }
+
+    /* Resize nav links (they will be hidden on mobile top bar) */
+    .index_navbar_link {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+
+    
+    .index_navbar_home_img2{
+        left: 3%;
+    }
+
+    /* Hide the top bar home flag to avoid overlap on small screens */
+    .index_navbar_home {
+        display: none;
+    }
+
+    /* Show hamburger toggle and hide top nav links on mobile */
+    .mobile_nav_toggle {
+        display: block;
+    }
+    /* hide desktop top links (they live in side nav on mobile) */
+    .index_navbar_link {
+        display: none;
+    }
+
+    /* Typography Adjustments */
+    .index_heading_cnt {
+        padding: 0 20px; /* Add side padding so text doesn't touch edges */
+    }
+
+    .index_heading {
+        text-align: left;
+        font-size: 70px;
+        margin-top: 10%; 
+        line-height: 1.2;
+    }
+
+    .index_heading_extention {
+        text-align: left;
+        font-size: 50px;
+        height: auto;   
+        margin-top: 10px;
+    }
+
+        .side_nav {
+        width: 240px;
+        left: -300px;
+    }
+}
+
+/* --- Small Phones (Screens smaller than 399.98px) --- */
+@media screen and (max-width: 399px) {
+       
+    .index_navbar_home {
+        display: none; /* Often cleaner to hide the hanging flag on very small screens */
+    }
+    
+    .index_navbar {
+        justify-content: space-between;
+    }
+    
+    .index_navbar_home_img2 {
+        position: relative;
+        margin: 0;
+        top: 0;
+        right: 0;
+    }
+
+    .index_heading {
+        font-size: 60px; /* Further reduce main text size */
+    }
+
+    /* Slightly narrower side nav for tiny phones */
+    .side_nav {
+        width: 240px;
+        left: -300px;
+    }
+    .side_nav.open {
+        left: 0;
+    }
+}
+
+/* ---------------------------
+   DESKTOP: HIDE MOBILE NAV
+   Completely hide side nav, overlay and hamburger
+   on widths greater than or equal to 768px using display:none
+   --------------------------- */
+@media screen and (min-width: 768px) {
+    .side_nav,
+    .side_nav_overlay,
+    .mobile_nav_toggle {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+}
+
+.index_heading_cnt{
+    padding-bottom: 120px;
+}
+
+.text_links{
+    color: #ec3750;
+}
+
+.text_links:hover{
+    text-decoration: wavy underline;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 1% auto;
+    padding: 30px 20px;
+}
+
+.about_section {
+    background: #ffffff;
+    color: #12202b;
+    padding: 5px 0 48px 0;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.section_title {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+    font-weight: 800;
+    color: #1f2d3d;
+}
+
+.section_text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+    color: #34475a;
+}
+
+.section_text.small {
+    opacity: 0.95;
+    margin-bottom: 18px;
+}
+
+/* What we do cards */
+.what_we_do {
+    display: flex;
+    gap: 16px;
+    margin-top: 18px;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;   
+}
+
+.what_card {
+    flex: 1 1 30%;
+    min-width: 200px;
+    background: #fbfbfd;
+    border: 1px solid rgba(31,45,61,0.04);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(18,32,43,0.04);
+    cursor: default;
+}
+
+.what_card:hover {
+    transform: translateY(-6px);
+    transition: transform 220ms ease;
+}
+
+.card_title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #1f2d3d;
+    font-weight: 700;
+}
+
+.card_text {
+    margin: 0;
+    font-size: 14px;
+    color: #3b5566;
+}
+
+/* -------- LEADERS (scoped and separate from what_card) --------
+   These styles target only the leaders_section so your "what we do"
+   cards remain unaffected.
+---------------------------------------------------------------- */
+.leaders_section {
+    margin-top: 40px;
+}
+
+/* Use the same layout container (what_we_do) but override only under leaders_section */
+.leaders_section .what_we_do {
+    display: flex;
+    gap: 20px;
+    margin-top: 18px;
+    align-items: stretch;
+    justify-content: center; /* center the three cards */
+    flex-wrap: nowrap;       /* force single row on wide screens */
+}
+
+/* Leader-specific card sizing & gradient */
+.leaders_section .what_card {
+    flex: 1 1 calc(33.333% - 13.33px); /* three equal cards with gap */
+    min-width: 240px;
+    padding: 18px;
+    border-radius: 12px;
+    border: none; /* remove thin border used by what_card */
+    color: #0f1720;
+    background: linear-gradient(135deg, #fff7fb 0%, #ffeef6 30%, #e7f4ff 60%, #e8fff1 100%);
+    box-shadow: 0 8px 28px rgba(8,10,20,0.12);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional accent stripe at the top for each leader (subtle) */
+.leaders_section .what_card::before {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background: linear-gradient(90deg, #ff9ab3 0%, #ffd58a 50%, #9ef5d6 100%);
+    opacity: 0.95;
+}
+
+/* make text stand out on leader cards */
+.leaders_section .card_title {
+    color: #081223;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+/* avatar inside leader card (scoped) */
+.leaders_section .what_card img {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid rgba(31,45,61,0.06);
+}
+
+/* a small meta line under name (scoped) */
+.leaders_section .meta-line {
+    font-size: 13px;
+    color: #3b5566;
+    margin-top: 4px;
+}
+
+/* subtle hover lift for leader cards */
+.leaders_section .what_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 44px rgba(8,10,20,0.20);
+}
+
+/* ensure leader text color remains legible */
+.leaders_section .card_text {
+    color: #21333b;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Make leaders wrap on narrow screens and adjust sizing */
+@media screen and (max-width: 767px) {
+    .leaders_section .what_we_do {
+        flex-wrap: wrap;
+    }
+
+    .leaders_section .what_card {
+        flex: 1 1 100%;
+        min-width: 220px;
+    }
+}
+
+/* Call to action row */
+.cta_row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.cta_text {
+    font-weight: 600;
+    color: #1f2d3d;
+    margin: 0;
+}
+
+.cta_button {
+    display: inline-block;
+    background: #ec3750;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.15s ease;
+}
+
+.cta_button:hover {
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.site_footer {
+    background: #0f1720;
+    color: #dbe8f2;
+    padding: 22px 0;
+    margin-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.footer_inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer_logo {
+    height: 44px;
+    width: 44px;
+    object-fit: contain;
+}
+
+.footer_left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer_text {
+    margin: 0;
+    font-size: 14px;
+    color: #c7e0ef;
+}
+
+.footer_right {
+    text-align: right;
+    font-size: 13px;
+}
+
+.footer_contact a,
+.footer_right a {
+    color: #dbe8f2;
+    text-decoration: underline;
+}
+
+.footer_small {
+    margin: 6px 0 0 0;
+    color: #a9c9d9;
+}
+
+.copyright {
+    color: #9fb9cf;
+}
+
+.what_card_h{
+    font-weight:800;
+    color:#1f2d3d;
+    font-size:18px;
+}
+
+.what_card_p{
+    font-size:13px;
+    color:#3b5566;
+    margin-top:4px;
+}
+/* ---------------------------
+   DARK THEME OVERRIDES
+   (applies only when <html data-theme="dark"> is present)
+   --------------------------- */
+
+/* Note: light theme rules above are unchanged. These selectors override
+   only what's needed for a consistent dark appearance. */
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] .index_heading_cnt{
+    background: linear-gradient(135deg, #2a1e27 0%, #331b24 30%, #1b2633 60%, #15281e 100%);
+}
+
+html[data-theme="dark"] .what_card_h{
+    color: #d8eef8;
+}
+
+html[data-theme="dark"] .what_card_p{
+    color: #bfe1ea;
+}
+
+html[data-theme="dark"] .index_heading_extention{
+    -webkit-text-fill-color: #d8eef8;
+}
+
+/* page background and general text */
+html[data-theme="dark"] .index_body,
+html[data-theme="dark"] body.index_body {
+    background: #071522; /* deep navy background */
+    color: #d8eef8;
+}
+
+/* navbar */
+html[data-theme="dark"] .index_navbar {
+    background: #071923;
+    border-bottom-color: rgba(255,255,255,0.04);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+html[data-theme="dark"] .index_navbar_link {
+    color: #e6f6ff;
+}
+
+html[data-theme="dark"] .index_navbar_link:hover {
+    color: #ff94ac; /* slightly lighter accent on hover */
+    background: rgba(255,123,154,0.06);
+}
+
+/* small navbar logos — don't change images, only visual filtering */
+html[data-theme="dark"] .index_navbar_home_img,
+html[data-theme="dark"] .index_navbar_home_img2 {
+    filter: none;
+    opacity: 0.98;
+}
+
+/* hero section */
+html[data-theme="dark"] .index_heading_cnt {
+    background: linear-gradient(135deg, #2a1e27 0%, #331b24 30%, #1b2633 60%, #15281e 100%);
+    border-bottom-color: rgba(255, 255, 255, 0.26);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.6);
+}
+
+html[data-theme="dark"] .index_heading_extention {
+    color: #d7eef8;
+}
+
+/* side nav (mobile) */
+html[data-theme="dark"] .side_nav {
+    background: #081826;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.7);
+}
+
+html[data-theme="dark"] .side_nav_close {
+    color: #cfeffc;
+}
+
+html[data-theme="dark"] .side_nav_link {
+    color: #e6f6ff;
+}
+
+html[data-theme="dark"] .side_nav_link:focus,
+html[data-theme="dark"] .side_nav_link:hover {
+    color: #ff7b9a;
+    background: rgba(255,123,154,0.06);
+}
+
+/* hamburger lines */
+html[data-theme="dark"] .hamburger span {
+    background: #e6f6ff;
+}
+
+/* content sections */
+html[data-theme="dark"] .about_section {
+    background: #071522;
+    color: #d0eaf6;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+html[data-theme="dark"] .section_title {
+    color: #eaf9ff;
+}
+
+html[data-theme="dark"] .section_text {
+    color: #bfe8f6;
+}
+
+html[data-theme="dark"] .text_links {
+    color: #ff94ac;
+}
+
+/* cards */
+html[data-theme="dark"] .what_card {
+    background: linear-gradient(180deg, rgba(6,18,24,0.65), rgba(4,12,16,0.6));
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+html[data-theme="dark"] .what_card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.7);
+}
+
+html[data-theme="dark"] .card_title {
+    color: #e9fbff;
+}
+
+html[data-theme="dark"] .card_text {
+    color: #b9dfe9;
+}
+
+/* leaders */
+html[data-theme="dark"] .leaders_section .what_card {
+    background: linear-gradient(135deg, rgba(8,18,24,0.52), rgba(8,14,18,0.5));
+    color: #e9fbff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+html[data-theme="dark"] .leaders_section .card_title {
+    color: #eaf9ff;
+}
+
+html[data-theme="dark"] .leaders_section .card_text {
+    color: #bfe1ea;
+}
+
+/* CTA */
+html[data-theme="dark"] .cta_text {
+    color: #eaf9ff;
+}
+
+/* keep your Call-to-action button exactly the same color (per your request
+   bright theme must remain unchanged). But in dark mode, white text may be
+   less visible on very dark backgrounds, so we add subtle outline only. */
+html[data-theme="dark"] .cta_button {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* footer — original footer you had already dark; keep similar but tweak text shade */
+html[data-theme="dark"] .site_footer {
+    background: #041016;
+    color: #cfe8f8;
+    border-top-color: rgba(255,255,255,0.02);
+}
+html[data-theme="dark"] .footer_text,
+html[data-theme="dark"] .footer_contact a,
+html[data-theme="dark"] .footer_right a,
+html[data-theme="dark"] .footer_small {
+    color: #cfe8f8;
+}
+
+/* small utilities (ensure focus outlines in dark show) */
+html[data-theme="dark"] .index_navbar_link:focus,
+html[data-theme="dark"] .side_nav_link:focus,
+html[data-theme="dark"] .cta_button:focus {
+    outline: 3px solid rgba(255,123,154,0.12);
+    outline-offset: 3px;
+}
+
+/* ---------------------------
+   THEME TOGGLE BUTTON STYLES
+   (keeps all styles in CSS file, none in HTML)
+   --------------------------- */
+
+.theme-toggle {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    z-index: 3000;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(31,45,61,0.06);
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 8px 24px rgba(18,32,43,0.06);
+    transition: transform 120ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+.theme-toggle:focus { outline: 3px solid rgba(236,55,80,0.12); outline-offset: 3px; }
+.theme-toggle svg { width: 20px; height: 20px; display: block; color: #1f2d3d; }
+
+/* Dark appearance for the toggle button when dark theme active */
+html[data-theme="dark"] .theme-toggle {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 34px rgba(0,0,0,0.6);
+}
+html[data-theme="dark"] .theme-toggle svg { color: #e6f6ff; }
+
+html[data-theme="dark"] .leaders_section .what_card {
+    background: linear-gradient(135deg, #2a1e27 0%, #331b24 30%, #1b2633 60%, #15281e 100%);
+}
+
+/*projects page*/
+
+.no_projects_x{
+    text-align: center;
+    font-size: 40px;
+    color: #34475ab0;
+    margin-top: 100px;
+    font-family: "Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html[data-theme="dark"] .no_projects_x{
+    color: #b0cde0a8;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CIPIKlub | Hack club</title>
+  <link rel="icon" type="image/png" href="Resources/fevicon.PNG">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
+</head>
+
+<body class="index_body">
+
+  <!-- Top navbar (kept for larger screens) -->
+  <nav class="index_navbar" role="navigation" aria-label="Main navigation">
+    <a href="https://hackclub.com" class="index_navbar_home" aria-label="Home">
+      <img class="index_navbar_home_img" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club flag">
+    </a>
+
+    <!-- Desktop links (kept identical) -->
+    <a href="index.html" class="index_navbar_link">Home</a>
+    <a href="projects.html" class="index_navbar_link">Projects</a>
+    <a href="events.html" class="index_navbar_link">Events</a>
+    <a href="Diary.html" class="index_navbar_link">Diary</a>
+    <a href="Gallery.html" class="index_navbar_link">Gallery</a>
+
+    <img class="index_navbar_home_img2" src="Resources/Black.PNG" alt="CIPIKlub logo">
+
+    <!-- Mobile hamburger toggle (hidden on desktop, shown on small screens via CSS) -->
+    <button class="mobile_nav_toggle" id="mobileNavToggle" aria-label="Open menu" aria-controls="sideNav" aria-expanded="false" type="button">
+      <span class="hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </nav>
+
+  <!-- Collapsible side navbar for mobile -->
+  <aside id="sideNav" class="side_nav" aria-hidden="true" aria-label="Mobile side navigation">
+    <div class="side_nav_header">
+      <button class="side_nav_close" id="sideNavClose" aria-label="Close menu" type="button">&times;</button>
+    </div>
+
+    <nav class="side_nav_links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html" class="side_nav_link">Home</a>
+      <a href="projects.html" class="side_nav_link">Projects</a>
+      <a href="events.html" class="side_nav_link">Events</a>
+      <a href="Diary.html" class="side_nav_link">Diary</a>
+      <a href="Gallery.html" class="side_nav_link">Gallery</a>
+    </nav>
+  </aside>
+
+  <h1 class="no_projects_x">Under construction! <br>the whole club journey will be written here :)</h1>
+
+  <!-- overlay shown when side nav open -->
+  <div id="sideNavOverlay" class="side_nav_overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg id="themeIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+
+<script>
+  window.addEventListener('mouseover', initLandbot, { once: true });
+  window.addEventListener('touchstart', initLandbot, { once: true });
+  var myLandbot;
+  function initLandbot() {
+    if (!myLandbot) {
+      var s = document.createElement('script');
+      s.type = "module"
+      s.async = true;
+      s.addEventListener('load', function() {
+        myLandbot = new Landbot.Popup({
+          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3247774-YAZB8N04GYP2ZFU8/index.json',
+        });
+      });
+      s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+  }
+</script>
+
+<script>
+  (function () {
+    const toggleBtn = document.getElementById('mobileNavToggle');
+    const sideNav = document.getElementById('sideNav');
+    const overlay = document.getElementById('sideNavOverlay');
+    const closeBtn = document.getElementById('sideNavClose');
+
+    // Defensive checks so desktop (where toggle is hidden) doesn't throw errors
+    function safeAddListener(el, event, fn) { if (el) el.addEventListener(event, fn); }
+
+    function openSideNav() {
+      if (!sideNav || !overlay || !toggleBtn) return;
+      sideNav.classList.add('open');
+      overlay.classList.add('visible');
+      document.body.classList.add('side-nav-open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      sideNav.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      const firstLink = sideNav.querySelector('.side_nav_link');
+      if (firstLink) firstLink.focus();
+    }
+
+    function closeSideNav() {
+      if (!sideNav || !overlay || !toggleBtn) return;
+      sideNav.classList.remove('open');
+      overlay.classList.remove('visible');
+      document.body.classList.remove('side-nav-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      sideNav.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      toggleBtn.focus();
+    }
+
+    safeAddListener(toggleBtn, 'click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      if (expanded) closeSideNav();
+      else openSideNav();
+    });
+
+    safeAddListener(closeBtn, 'click', closeSideNav);
+    safeAddListener(overlay, 'click', closeSideNav);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sideNav && sideNav.classList.contains('open')) {
+        closeSideNav();
+      }
+    });
+
+    // When resizing to desktop, just ensure nav is closed (but we do NOT toggle display here)
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768 && sideNav && sideNav.classList.contains('open')) {
+        closeSideNav();
+      }
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+
+  </body>
+  </html>

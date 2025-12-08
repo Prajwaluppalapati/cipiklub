@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CIPIKlub | Hack club</title>
+  <link rel="icon" type="image/png" href="Resources/fevicon.PNG">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
+</head>
+
+<body class="index_body">
+
+  <!-- Top navbar (kept for larger screens) -->
+  <nav class="index_navbar" role="navigation" aria-label="Main navigation">
+    <a href="https://hackclub.com" class="index_navbar_home" aria-label="Home">
+      <img class="index_navbar_home_img" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club flag">
+    </a>
+
+    <!-- Desktop links (kept identical) -->
+    <a href="index.html" class="index_navbar_link">Home</a>
+    <a href="projects.html" class="index_navbar_link">Projects</a>
+    <a href="events.html" class="index_navbar_link">Events</a>
+    <a href="Diary.html" class="index_navbar_link">Diary</a>
+    <a href="Gallery.html" class="index_navbar_link">Gallery</a>
+
+    <img class="index_navbar_home_img2" src="Resources/Black.PNG" alt="CIPIKlub logo">
+
+    <!-- Mobile hamburger toggle (hidden on desktop, shown on small screens via CSS) -->
+    <button class="mobile_nav_toggle" id="mobileNavToggle" aria-label="Open menu" aria-controls="sideNav" aria-expanded="false" type="button">
+      <span class="hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </nav>
+
+  <!-- Collapsible side navbar for mobile -->
+  <aside id="sideNav" class="side_nav" aria-hidden="true" aria-label="Mobile side navigation">
+    <div class="side_nav_header">
+      <button class="side_nav_close" id="sideNavClose" aria-label="Close menu" type="button">&times;</button>
+    </div>
+
+    <nav class="side_nav_links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html" class="side_nav_link">Home</a>
+      <a href="projects.html" class="side_nav_link">Projects</a>
+      <a href="events.html" class="side_nav_link">Events</a>
+      <a href="Diary.html" class="side_nav_link">Diary</a>
+      <a href="Gallery.html" class="side_nav_link">Gallery</a>
+    </nav>
+  </aside>
+
+  <!-- overlay shown when side nav open -->
+  <div id="sideNavOverlay" class="side_nav_overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <!-- Main hero / headings (kept as before) -->
+  <div class="index_heading_cnt">
+    <h1 class="index_heading">CIPIKlub | Hack Club</h1>
+    <h2 class="index_heading_extention">Create, Invent, Programme, Innovate</h2>
+  </div>
+
+  <!-- NEW: About section -->
+  <main class="main_content" id="main">
+    <section class="about_section" id="about">
+      <div class="container">
+        <h3 class="section_title">About CIPIKlub</h3>
+        <p class="section_text">
+          <b>What is CIPIKlub?</b>
+          <br>
+          CIPIKlub (Create, invent, programme, innovate) is a student-led coding club which is registered under <a class="text_links" href="https://hackclub.com">hack club</a> that brings young makers and coders together to learn, build,
+          and share technology projects. We build Apps, websites, games and hardware projects together in a fun and collaborative environment.
+          <br><br>
+          We also conduct workshops, hackathons, and coding challenges to help members improve their coding skills and explore technology.
+        </p>
+
+        <p class="section_text small">
+          <b>Our mission and vision</b>
+          <br>
+          At CIPIKlub, our mission is to empower students to think boldly, build fearlessly, and innovate responsibly. We believe that the best way to learn is by doing — experimenting, failing, improving, and ultimately creating something that matters. Our vision is to nurture a space where curiosity thrives, ideas turn into real-world projects, and every student feels confident exploring technology regardless of their skill level. CIPIKlub aims to become a launchpad for young innovators, helping them develop technical skills, leadership qualities, and a mindset for lifelong learning.
+          <br><br>
+          Whether you’re curious about programming and robotics, CIPIKlub is a friendly place
+          to try things hands-on, ask questions, and work with others CIPIKlubbers.
+        </p>
+
+        <div class="what_we_do">
+          <article class="what_card">
+            <h4 class="card_title">App Development</h4>
+            <p class="card_text">Build various apps, it may android app or desktop application</p>
+          </article>
+
+          <article class="what_card">
+            <h4 class="card_title">hardware and Robotics</h4>
+            <p class="card_text">Build robots, cars, robotic arm... Also build any type of hardware projects with hands on experience.</p>
+          </article>
+
+          <article class="what_card">
+            <h4 class="card_title">Game Development</h4>
+            <p class="card_text">This is the most fun part for all of the CIPIKlubbers. Develop fun and addictive games.</p>
+          </article>
+
+          <article class="what_card">
+            <h4 class="card_title">Web Development</h4>
+            <p class="card_text">Design websites and maybe create a website on yourself or anything you like.</p>
+          </article>
+
+          <article class="what_card">
+            <h4 class="card_title">AI development</h4>
+            <p class="card_text">This is a thing that a coder must learn. If not AI development, basics of AI must be learnt.</p>
+          </article>
+        </div>
+
+        <!--add here-->
+        <!-- Leaders section - three profiles -->
+        <section class="leaders_section" aria-label="Club leaders" style="margin-top:40px;">
+          <h3 class="section_title">Meet the Leaders</h3>
+
+          <div class="what_we_do" style="margin-top:18px;">
+            <!-- Leader 1 -->
+             <article class="what_card" aria-label="Prajwal Uppalapati profile">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+                <img src="data:image/png;base64,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" alt="Prajwal photo" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid rgba(31,45,61,0.06);">
+                <div>
+                  <div class="what_card_h">Prajwal Uppalapati</div>
+                  <div class="what_card_p">Founder & Innovation Lead</div>
+                </div>
+              </div>
+              <p class="card_text" style="margin-top:6px;">
+                Full-stack web and Arduino developer. Prajwal manages club activities, content for the YouTube channel, and mentors members on app and web projects.
+              </p>
+            </article>
+            
+            <!-- Leader 2 -->
+            <article class="what_card" aria-label="Chiranjeevi Rao D V profile">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+                <img src="data:image/png;base64,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" alt="Chiranjeevi photo" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid rgba(31,45,61,0.06);">
+                <div>
+                  <div class="what_card_h">Chiranjeevi Rao D V</div>
+                  <div class="what_card_p">Co-founder & Training & Projects Lead</div>
+                </div>
+              </div>
+              <p class="card_text" style="margin-top:6px;">
+                A Python, Java and C/C++ programmer and Arduino developer with more than 5 years of programming and electronics experience. Chiranjeevi leads workshops and helps members with embedded projects.
+              </p>
+            </article>
+
+
+            <!-- Leader 3 -->
+            <article class="what_card" aria-label="Abhinand Gowravaram profile">
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaDe792MNyNGBnIaU7Pf6wKx8l6gtvEwM3rQ&s" alt="Abhinand photo" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid rgba(31,45,61,0.06);">
+                <div>
+                  <div class="what_card_h">Abhinand Gowravaram</div>
+                  <div class="what_card_p">Co-founder & Technical Coordinator</div>
+                </div>
+              </div>
+              <p class="card_text" style="margin-top:6px;">
+                Experienced with Python, backend web and Arduino. Abhinand focuses on physical computing, robotics competitions, and hands-on lab sessions.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <div class="cta_row">
+          <p class="cta_text">Want to join or collaborate? We meet weekly and always welcome curious minds.</p>
+          <a class="cta_button" href="#" title="Contact CIPIKlub">Join / Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script>
+  window.addEventListener('mouseover', initLandbot, { once: true });
+  window.addEventListener('touchstart', initLandbot, { once: true });
+  var myLandbot;
+  function initLandbot() {
+    if (!myLandbot) {
+      var s = document.createElement('script');
+      s.type = "module"
+      s.async = true;
+      s.addEventListener('load', function() {
+        myLandbot = new Landbot.Popup({
+          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3247774-YAZB8N04GYP2ZFU8/index.json',
+        });
+      });
+      s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+  }
+
+</script>
+
+  <footer class="site_footer" role="contentinfo">
+    <div class="footer_inner">
+      <div class="footer_left">
+        <img src="Resources/CIPIKlub_logo_final-removebg-preview-final.png" alt="CIPIKlub logo" class="footer_logo">
+        <p class="footer_text">CIPIKlub — a student-run Hack Club focused on learning by building.</p>
+      </div>
+
+<img src="https://assets.hackclub.com/flag-standalone-wtransparent.svg" height="30px">
+
+      <div class="footer_right">
+        <p class="footer_contact">Contact: <a href="mailto:cipiklubofficial@gmail.com">cipiklubofficial@gmail.com</a></p>
+        <p class="footer_small">Follow: <a href="https://www.youtube.com/@CIPIKlubofficial" aria-label="YouTube">YouTube</a> · <a href="#" aria-label="Instagram">Add</a></p>
+        <p class="copyright">© <span id="year"></span> CIPIKlub</p>
+      </div>
+    </div>
+  </footer>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need (kept as before)
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA4FEBzhOIUQzjdM2jhA_rL1zXCxNzsYxE",
+    authDomain: "cipiklub.firebaseapp.com",
+    projectId: "cipiklub",
+    storageBucket: "cipiklub.firebasestorage.app",
+    messagingSenderId: "728468988648",
+    appId: "1:728468988648:web:222f7ea77b4076bfefdf5d",
+    measurementId: "G-BNR18ZE4FQ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+<!-- Small JS to toggle the side nav (keeps behavior local and simple) -->
+<script>
+  (function () {
+    const toggleBtn = document.getElementById('mobileNavToggle');
+    const sideNav = document.getElementById('sideNav');
+    const overlay = document.getElementById('sideNavOverlay');
+    const closeBtn = document.getElementById('sideNavClose');
+
+    // Defensive checks so desktop (where toggle is hidden) doesn't throw errors
+    function safeAddListener(el, event, fn) { if (el) el.addEventListener(event, fn); }
+
+    function openSideNav() {
+      if (!sideNav || !overlay || !toggleBtn) return;
+      sideNav.classList.add('open');
+      overlay.classList.add('visible');
+      document.body.classList.add('side-nav-open');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      sideNav.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      const firstLink = sideNav.querySelector('.side_nav_link');
+      if (firstLink) firstLink.focus();
+    }
+
+    function closeSideNav() {
+      if (!sideNav || !overlay || !toggleBtn) return;
+      sideNav.classList.remove('open');
+      overlay.classList.remove('visible');
+      document.body.classList.remove('side-nav-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      sideNav.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      toggleBtn.focus();
+    }
+
+    safeAddListener(toggleBtn, 'click', function () {
+      const expanded = this.getAttribute('aria-expanded') === 'true';
+      if (expanded) closeSideNav();
+      else openSideNav();
+    });
+
+    safeAddListener(closeBtn, 'click', closeSideNav);
+    safeAddListener(overlay, 'click', closeSideNav);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sideNav && sideNav.classList.contains('open')) {
+        closeSideNav();
+      }
+    });
+
+    // When resizing to desktop, just ensure nav is closed (but we do NOT toggle display here)
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768 && sideNav && sideNav.classList.contains('open')) {
+        closeSideNav();
+      }
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+
+<!-- THEME TOGGLE MARKUP & SCRIPT -->
+<!-- toggle button (fixed bottom-left) -->
+<button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle theme">
+  <svg id="themeIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
